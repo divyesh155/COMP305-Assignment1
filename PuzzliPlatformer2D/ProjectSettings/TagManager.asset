@@ -8,6 +8,8 @@ TagManager:
   - Slope
   - RedCrystal
   - Danger
+  - Text
+  - Text1
   layers:
   - Default
   - TransparentFX

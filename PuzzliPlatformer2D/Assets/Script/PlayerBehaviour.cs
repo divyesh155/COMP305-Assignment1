@@ -12,6 +12,9 @@ public class PlayerBehaviour : MonoBehaviour
     public Transform _transform;
     public SpriteRenderer sp;
     public CinemachineCameraOffset cs;
+    public GameObject text1;
+    public GameObject text2;
+    public GameObject platform;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +60,9 @@ public class PlayerBehaviour : MonoBehaviour
         {
             sp.color = Color.red;
             Destroy(collision.gameObject);
+            text1.SetActive(true);
+            text2.SetActive(false);
+            platform.SetActive(true);
         }
          if(collision.gameObject.CompareTag("Finish") && sp.color == Color.red)
         {
