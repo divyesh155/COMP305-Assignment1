@@ -15,6 +15,17 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject text1;
     public GameObject text2;
     public GameObject platform;
+    public GameObject tiltPlatform;
+
+    [Header("Platforms")]
+    public GameObject floating;
+    public GameObject moving;
+    public GameObject tilting;
+    public GameObject bouncing;
+    public GameObject collapsing;
+    public GameObject ferris;
+    public GameObject exploding;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,9 +79,75 @@ public class PlayerBehaviour : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
-        if (collision.gameObject.CompareTag("Danger"))
+        if (collision.gameObject.CompareTag("Restart"))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
+        }
+
+        if(collision.gameObject.CompareTag("P1Left"))
+        {
+            tiltPlatform.transform.eulerAngles = Vector3.forward * 50;
+        }
+
+        if (collision.gameObject.CompareTag("Moving"))
+        {
+            moving.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Floating"))
+        {
+            floating.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Tilting"))
+        {
+            tilting.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Bouncing"))
+        {
+            bouncing.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Collapsing"))
+        {
+            collapsing.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Ferris"))
+        {
+            ferris.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("Exploding"))
+        {
+            exploding.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Moving"))
+        {
+            moving.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Floating"))
+        {
+            floating.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Tilting"))
+        {
+            tilting.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Bouncing"))
+        {
+            bouncing.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Collapsing"))
+        {
+            collapsing.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Ferris"))
+        {
+            ferris.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Exploding"))
+        {
+            exploding.SetActive(false);
         }
     }
     void OnCollisionExit2D(Collision2D col)

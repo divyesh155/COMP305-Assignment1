@@ -10,6 +10,17 @@ TagManager:
   - Danger
   - Text
   - Text1
+  - P1Right
+  - P1Left
+  - FxTemporaire
+  - Floating
+  - Moving
+  - Tilting
+  - Bouncing
+  - Collapsing
+  - Ferris
+  - Exploding
+  - Restart
   layers:
   - Default
   - TransparentFX
@@ -17,8 +28,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - boxes
+  - Player
   - 
   - 
   - 
