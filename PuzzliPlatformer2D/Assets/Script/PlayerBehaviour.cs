@@ -81,7 +81,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Restart"))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(0);
         }
 
         if(collision.gameObject.CompareTag("P1Left"))
